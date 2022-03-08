@@ -88,7 +88,7 @@ function resultadosFinales(listadoAlumnos) {
   );
   
   //Ordenar el listado de alumnos de mejor a peor promedio
-  const mejoresPromedios = listadoAlumnos.sort((a, b) => {
+  const mejoresPromedios = [...listadoAlumnos].sort((a, b) => {
     if (a.promedio > b.promedio) {
       return -1;
     }
@@ -97,6 +97,8 @@ function resultadosFinales(listadoAlumnos) {
     }
     return 0;
   });
+
+  console.log(mejoresPromedios, listadoAlumnos)
 
 
   alert(`Han aprobado ${alumnosAprobados.length} alumnos de un total de ${cantidadAlumnos}
